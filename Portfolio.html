@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cloud for your Service</title>
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom css -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg-color: #2b4967;
+            --second-bg-color: #032446;
+            --text-color: #212529;
+            --main-color: #007bff;
+            --login-signup-color: #28a745;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            justify-content: space-between;
+            background: var(--second-bg-color);
+        }
+
+        .about-content {
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin-left: 210px;
+        }
+
+        .about-content h3 {
+            font-size: 50px;
+            font-weight: 1000;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .about-content p {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            text-align: justify;
+            padding: 100px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-img img {
+            margin: 150px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 50%;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: cursive;
+            color: #fff;
+        }
+
+        .header {
+            background: var(--second-bg-color);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-bar:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        #menu-icon {
+            font-size: 2rem;
+            color: var(--text-color);
+            display: none;
+        }
+
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+
+        .home-img img{
+            flex: 1;
+            margin-left: 250px;
+            margin-right: 100px;
+            margin-top: 40px;
+            width: 500px;
+            height: 600px;
+            border-radius: 30%;
+        }
+
+        .home-content {
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin-left: 110px;
+            margin-right: 110px;
+        }
+
+        .home-content p {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            font-size: 2.5rem;
+            size: 100px;
+            text-align: justify;
+            padding: 50px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin-right: 100px;
+        }
+
+        .home-content h3 {
+            font-size: 50px;
+            font-weight: 1000;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .home-content h3:nth-of-type(2) {
+            margin-bottom: 20px;
+        }
+
+        span {
+            color: var(--main-color);
+            font-family: cursive;
+            font-size: 50px;
+        }
+
+        .home-content h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--main-color);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 5px;
+            font-size: 1.5rem;
+            transition: .3s;
+        }
+
+        .social-media a:hover {
+            background: #333;
+        }
+
+        .skills {
+            padding: 80px 0;
+        }
+
+        .skills h3 {
+            font-size: 50px;
+            font-weight: 1000;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .skill {
+            margin-bottom: 30px;
+        }
+
+        .skill h2 {
+            font-size: 1.5rem;
+            color: #007bff;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .skill p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .apps {
+            background: #fff;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+            background: var(--second-bg-color);
+        }
+
+        .project h3 {
+            font-size: 50px;
+            font-weight: 1000;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .project-box {
+            width: 400px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .project-box img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            font-size: 100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .project-layer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-layer:hover {
+            background-color: #007bff;
+        }
+
+        .project-layer:active {
+            background-color: #f0f0f0;
+            color: #fff;
+        }
+
+        .project-layer h4 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .project-box p {
+            margin-top: 10px;
+        }
+
+        .contact {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+            background: var(--bg-color);
+        }
+
+        .contact h3 {
+            font-size: 50px;
+            font-weight: 1000;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-box {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            margin: 0 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-box i {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .contact-box h3 {
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .contact-box p {
+            margin: 0;
+            color: #666;
+            font-size: 25px;
+        }
+
+        .contact-box a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: var(--second-bg-color);
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .footer a {
+            color: var(--main-color);
+            margin: 0 5px;
+            font-size: 1rem;
+            transition: .3s;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .navbar a {
+                display: none;
+            }
+
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar.responsive {
+                display: block;
+            }
+
+            .navbar.responsive a {
+                display: block;
+                text-align: center;
+                padding: 15px 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="navbar" id="navbar">
+            <button class="nav-btn" onclick="scrollToSection('home')">Home</button>
+            <button class="nav-btn" onclick="scrollToSection('about')">About</button>
+            <button class="nav-btn" onclick="scrollToSection('skills')">Skills</button>
+            <button class="nav-btn" onclick="scrollToSection('project')">Projects</button>
+            <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-img">
+            <img src="C:/Users/chenc/Pictures/Chenchu Sasank.png" alt="Profile Image">
+        </div>
+        <div class="home-content">
+            <h3><span>MySelf </span> Pendela Chenchu Sasank</h3>
+            <p>MySelf Pendela Chenchu Sasank and I am from Andhra Pradesh. Currently, I am pursuing my studies at Jain University in Bangalore, specializing in CSE Cloud Technology & Information Security. My father is involved in finance, and my mother is a homemaker; I also have a wonderful brother. My hobbies include playing volleyball and cricket, as well as exploring topics of interest and troubleshooting problems is my curiosity. I acquired foundational knowledge in HTML and CSS through w3schools.com. One of my strengths is maintaining a positive demeanor in challenging situations, while a potential weakness is my tendency to trust others too easily. And that's a brief overview about me.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100008908201596" target="_blank" id="facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://twitter.com/ChenchuSasank22" target="_blank" id="twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/pendela-chenchu-sasank-99008a228/" target="_blank" id="linkedin"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.instagram.com/c_h_i_n_n_a_02/" target="_blank" id="instagram"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="app">
+            <div class="about-content">
+                <h3>About <span> Me</span></h3>
+                <p>I am a FrontEnd Developer and I created some website like Quiz Game, Rock-Paper-Scissors. Embarking on a journey as a web developer, I bring a fusion of creativity and technical prowess to the digital realm. Fluent in HTML5, CSS3, and JavaScript, I wield these languages to sculpt engaging and visually captivating websites. My knack for responsive design is enhanced by the use of Bootstrap, ensuring a seamless user experience across devices. Python fuels my backend ambitions, while MySQL serves as the backbone for efficient data management. Eager to contribute my skills to innovative projects, I am committed to continuous learning and staying on the cutting edge of web development. Let's embark on this exciting digital adventure together.</p>
+            </div>
+        </div>
+        <div class="app-img">
+            <img src="C:/Users/chenc/Pictures/Sasank.png" alt="About Image">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="skills" id="skills">
+        <h3><span>Technical </span> Skills</h3>
+        <div class="apps">
+            <div class="skill">
+                <h2><i class='bx bxl-html5'></i>HTML</h2>
+                <p>HTML, or Hypertext Markup Language, is the standard markup language for creating web pages. It provides the structure and layout of content on the World Wide Web.</p>
+            </div>
+            <div class="skill">
+                <h2><i class='bx bxl-css3' ></i>CSS</h2>
+                <p>CSS, or Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It controls the visual aspects of web pages, such as colors, fonts, and layout.</p>
+            </div>
+            <div class="skill">
+                <h2><i class='bx bxl-javascript'></i>JavaScript</h2>
+                <p>JavaScript is a programming language that enables interactive web pages and dynamic content. It is commonly used for client-side scripting, allowing web developers to create engaging user experiences.</p>
+            </div>
+            <div class="skill">
+                <h2><i class='bx bxl-bootstrap' ></i>Bootstrap</h2>
+                <p>Bootstrap is a front-end framework used to design and customize responsive and mobile-first websites. It provides pre-designed templates and components, making web development faster and more efficient.</p>
+            </div>
+            <div class="skill">
+                <h2><i class='bx bxl-python' ></i>Python</h2>
+                <p>Python is a versatile and high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, and various other applications.</p>
+            </div>
+            <div class="skill">
+                <h2><i class='bx bxs-data' ></i>MySQL</h2>
+                <p>MySQL is an open-source relational database management system (RDBMS) that uses Structured Query Language (SQL). It is commonly used for managing and querying data in web applications and other software systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="project" id="project">
+        <h3>Latest <span> Projects</span></h3>
+
+        <div class="project-container">
+            <div class="project-box">
+                <img src="C:/Users/chenc/Desktop/Languages/HTML/Portfolio/Private.jpeg" alt="Private Files">
+                <div class="project-layer">
+                    <h4>Private Files</h4>
+                </div>
+                <p>A Novel Approach to Provide High Security to Shared Resources in the Cloud Platform.</p>
+            </div>
+
+            <div class="project-box">
+                <img src="C:/Users/chenc/Desktop/Languages/HTML/Portfolio/Retail.jpg" alt="Retail">
+                <div class="project-layer">
+                    <h4>Retail</h4>
+                </div>
+                <p>Revolutionizing Retail: Innovating Shopping Experiences in the Digital Age.</p>
+            </div>
+
+            <div class="project-box">
+                <img src="C:/Users/chenc/Desktop/Languages/HTML/Portfolio/Quiz game.png" alt="Quiz Game">
+                <div class="project-layer">
+                    <h4>Quiz Game</h4>
+                </div>
+                <p>Embark on a journey of quiz mastery - conquer ten questions, emerge as the victorious champion.</p>
+            </div>
+
+            <div class="project-box">
+                <img src="C:/Users/chenc/Desktop/Languages/HTML/Portfolio/rock paper scissor.png" alt="Rock-Paper-Scissors">
+                <div class="project-layer">
+                    <h4>Rock-Paper-Scissors</h4>
+                </div>
+                <p>Unleash strategic choices in the classic game of Rock-Paper-Scissors triumph.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <h3><span>Contact </span> Me</h3>
+    
+        <div class="contact-container">
+            <div class="contact-box">
+                <i class='bx bxs-phone'></i>
+                <h3>Phone Number</h3>
+                <p><a href="tel:+91 9014140498">+91 9014140498</a></p>
+            </div>
+        
+            <div class="contact-box">
+                <i class='bx bx-envelope'></i>
+                <h3>Email ID</h3>
+                <p><a href="mailto:chenchusasankp@gmail.com">chenchusasankp@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Copyright &copy; 2024 All rights reserved. | Designed by Sasank</p>
+    </footer>
+
+    <script>
+        // Responsive Navbar
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('responsive');
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Social Media Icon Expansion
+        const socialMediaIcons = document.querySelectorAll('.social-media a');
+
+        socialMediaIcons.forEach(icon => {
+            icon.addEventListener('mouseover', () => {
+                icon.style.transform = 'scale(1.2)';
+            });
+
+            icon.addEventListener('mouseout', () => {
+                icon.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
